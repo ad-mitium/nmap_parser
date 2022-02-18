@@ -49,9 +49,9 @@ portfile.close()
 
 for line in lines:
     ip_address_match = re.match('^Nmap\sscan', line)
-    
+    host_ip_pattern = re.findall(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})', line)
+
     if ip_address_match:
-        host_ip_pattern = re.findall(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})', line)
 #        print('\n',host_ip_pattern[0])
         outfile.write(f"\n{host_ip_pattern[0]}\n")
     ports = re.findall(port_test, line)
