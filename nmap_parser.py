@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # Authored by Timothy Mui 2/17/2022
-# Version 0.1.0
+# Version 0.1.1
 
 import re
 import argparse
 
-version_info = (0, 1, 0)
+version_info = (0, 1, 1)
 version = '.'.join(str(c) for c in version_info)
 
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter, description='''
@@ -49,9 +49,9 @@ portfile.close()
 
 for line in lines:
     ip_address_match = re.match('^Nmap\sscan', line)
-    host_ip_pattern = re.findall(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})', line)
 
     if ip_address_match:
+        host_ip_pattern = re.findall(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})', line)
 #        print('\n',host_ip_pattern[0])
         outfile.write(f"\n{host_ip_pattern[0]}\n")
     ports = re.findall(port_test, line)
