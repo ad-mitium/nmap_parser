@@ -8,8 +8,6 @@ import argparse
 version_info = (0, 1, 0)
 version = '.'.join(str(c) for c in version_info)
 
-usage = ["Command usage: nmap_parser.py {input file} {output file} {ports file} "]
-
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter, description='''
    Parses .nmap text file for open ports and will exclude ports in supplied port file
    
