@@ -10,7 +10,9 @@ version = '.'.join(str(c) for c in version_info)
 
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter, description='''
    Parses nmap scan output for open ports and will exclude ports in supplied port file
-   
+
+   At present, filtering IPv4 address space is supported.
+
    *NOTE* The ports file format should be one line per {port number}/{protocol}
           Example: 443/tcp
                    22/tcp    ''', 
