@@ -9,7 +9,7 @@ version_info = (0, 1, 1)
 version = '.'.join(str(c) for c in version_info)
 
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter, description='''
-   Parses .nmap text file for open ports and will exclude ports in supplied port file
+   Parses nmap scan output for open ports and will exclude ports in supplied port file
    
    *NOTE* The ports file format should be one line per {port number}/{protocol}
           Example: 443/tcp
